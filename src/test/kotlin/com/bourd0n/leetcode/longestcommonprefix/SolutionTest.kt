@@ -1,44 +1,48 @@
 package com.bourd0n.leetcode.longestcommonprefix
 
-import org.junit.Assert
+import org.junit.Assert.*
 import org.junit.Test
 
 class SolutionTest {
 
     private val solution = Solution()
 
+    private fun test(strs: Array<String>): String {
+        return solution.longestCommonPrefix4(strs)
+    }
+
     @Test
     fun test1() {
-        Assert.assertEquals("fl", solution.longestCommonPrefix(arrayOf("flower", "flow", "flight")))
+        assertEquals("fl", test(arrayOf("flower", "flow", "flight")))
     }
 
     @Test
     fun test2() {
-        Assert.assertEquals("", solution.longestCommonPrefix(arrayOf("ower", "flow", "flight")))
+        assertEquals("", test(arrayOf("ower", "flow", "flight")))
     }
 
     @Test
     fun test3() {
-        Assert.assertEquals("f", solution.longestCommonPrefix(arrayOf("fower", "flow", "flight")))
+        assertEquals("f", test(arrayOf("fower", "flow", "flight")))
     }
 
     @Test
     fun test4() {
-        Assert.assertEquals("", solution.longestCommonPrefix(arrayOf("", "")))
+        assertEquals("", test(arrayOf("", "")))
     }
 
     @Test
     fun test5() {
-        Assert.assertEquals("", solution.longestCommonPrefix(arrayOf("")))
+        assertEquals("", test(arrayOf("")))
     }
 
     @Test
     fun test6() {
-        Assert.assertEquals("let", solution.longestCommonPrefix(arrayOf("let", "let", "let")))
+        assertEquals("let", test(arrayOf("let", "let", "let")))
     }
 
     @Test
     fun test7() {
-        Assert.assertEquals("aa", solution.longestCommonPrefix(arrayOf("aaa", "aa", "aaa")))
+        assertEquals("aa", test(arrayOf("aaa", "aa", "aaa")))
     }
 }
