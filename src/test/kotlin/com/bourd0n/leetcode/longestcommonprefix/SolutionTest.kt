@@ -8,7 +8,7 @@ class SolutionTest {
     private val solution = Solution()
 
     private fun test(strs: Array<String>): String {
-        return solution.longestCommonPrefix4(strs)
+        return solution.longestCommonPrefixBinary(strs)
     }
 
     @Test
@@ -44,5 +44,10 @@ class SolutionTest {
     @Test
     fun test7() {
         assertEquals("aa", test(arrayOf("aaa", "aa", "aaa")))
+    }
+
+    @Test
+    fun test8() {
+        assertEquals("a", test(arrayOf("a")))
     }
 }

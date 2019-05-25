@@ -84,5 +84,31 @@ class Solution {
         }
         return lcpLeft.substring(0, min)
     }
+
+    //Binary search
+    fun longestCommonPrefixBinary(strs: Array<String>) : String {
+        if (strs.isEmpty()) return ""
+        var m = strs[0].length / 2 + 1
+        var longestCommonPrefix = ""
+        while (m > 0 && m <= strs[0].length) {
+            val curPrefix = strs[0].substring(0, m)
+            var commonPrefix = true
+            for (i in 1 until strs.size) {
+                if (strs[i].indexOf(curPrefix) != 0) {
+                    commonPrefix = false
+                    break
+                }
+            }
+            when {
+                commonPrefix -> {
+                    longestCommonPrefix = curPrefix
+                    m += 1
+                }
+                longestCommonPrefix.isNotEmpty() -> return longestCommonPrefix
+                else -> m -= 1
+            }
+        }
+        return longestCommonPrefix
+    }
 }
 
