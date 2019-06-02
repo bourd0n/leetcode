@@ -15,6 +15,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     testCompile("junit", "junit", "4.12")
+    testCompile("com.willowtreeapps.assertk:assertk-jvm:0.17")
 }
 
 configure<JavaPluginConvention> {
